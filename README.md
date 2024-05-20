@@ -137,7 +137,7 @@ const chartOptions = useChart({
 />
 ```
 
-![Line Chart](public/screenshots/line-chart.png)
+![Line Chart](public/screenshots/line-chart.PNG)
 
 ### Pie Chart
 
@@ -147,7 +147,7 @@ The Pie Chart is implemented in the `app-current-visits.jsx` file. You can view 
 <Chart type="pie" series={chartSeries} options={chartOptions} />
 ```
 
-![Pie Chart](public/screenshots/pie-chart.png)
+![Pie Chart](public/screenshots/pie-chart.PNG)
 
 ### Column Chart
 
@@ -157,7 +157,7 @@ The Column Chart is implemented in the `app-conversion-rates.jsx` file. You can 
 <Chart type="bar" series={[{ data: chartSeries }]} options={chartOptions} />
 ```
 
-![Column Chart](public/screenshots/column-chart.png)
+![Column Chart](public/screenshots/column-chart.PNG)
 
 ### Radar Chart
 
@@ -167,7 +167,7 @@ The Radar Chart is implemented in the `app-current-subject.jsx` file. You can vi
 <Chart type="radar" series={series} options={chartOptions} />
 ```
 
-![Radar Chart](public/screenshots/radar-chart.png)
+![Radar Chart](public/screenshots/radar-chart.PNG)
 
 ## Challenges and Solutions
 
