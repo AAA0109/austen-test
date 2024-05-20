@@ -76,7 +76,98 @@ You can view a live demo of the project at https://austen-test.vercel.app/.
 - **Responsiveness**: Ensured through the use of MUI's responsive design utilities and features.
 - **Custom Theme**: Implemented a custom theme using MUI's theming solution.
 - **Mock Data**: Generated mock data using [@faker-js/faker](https://www.npmjs.com/package/@faker-js/faker).
-- **Chart Types**: Implemented various chart types including Column Chart, Area Chart, Line Chart, Bar Chart, Pie Chart, and Radar Chart using ApexCharts.js. Each chart type has its own component in the `/components/chart` directory. A custom hook is provided to generate chart options, and a styled component is used for customizing the ApexChart component. Each chart is implemented by generating different chart options.
+- **Chart Types**: Implemented various chart types. A custom hook is provided in the [`/src/components/chart/user-chart.js`](./src/components/chart/use-chart.js) to generate chart options, and a styled component is used in the [`/src/components/chart/chart.js`](./src/components/chart/chart.js) for customizing the ApexChart component. Each chart is implemented by generating different chart options.
+
+## Chart Types
+
+We have implemented various chart types using ApexCharts.js.
+
+### Using the `useChart` Hook
+
+```jsx
+import Chart, { useChart } from 'src/components/chart';
+
+// ..
+const Component = () => {
+  // ..
+  const chartOptions = useChart({
+    plotOptions: {
+      bar: {
+        columnWidth: '16%',
+      },
+    },
+    fill: {
+      type: series.map((i) => i.fill),
+    },
+    xaxis: {
+      type: 'datetime',
+    },
+    ...options,
+  });
+  // ..
+};
+```
+
+### Column Chart, Area Chart, Line Chart
+
+These charts are implemented in the `app-website-visits.jsx` file. You can view the file [here](./src/sections/overview/app-website-visits.jsx).
+
+```jsx
+const chartOptions = useChart({
+  //..
+  series: [
+    {
+      type: 'column',
+      // ..
+    },
+    {
+      type: 'area',
+      // ..
+    },
+    {
+      type: 'line',
+      // ..
+    },
+  ],
+})
+<Chart
+  type="line"
+  series={series}
+  options={chartOptions}
+/>
+```
+
+![Line Chart](public/screenshots/line-chart.png)
+
+### Pie Chart
+
+The Pie Chart is implemented in the `app-current-visits.jsx` file. You can view the file [here](./src/sections/overview/app-current-visits.jsx).
+
+```jsx
+<Chart type="pie" series={chartSeries} options={chartOptions} />
+```
+
+![Pie Chart](public/screenshots/pie-chart.png)
+
+### Column Chart
+
+The Column Chart is implemented in the `app-conversion-rates.jsx` file. You can view the file [here](./src/sections/overview/app-conversion-rates.jsx).
+
+```jsx
+<Chart type="bar" series={[{ data: chartSeries }]} options={chartOptions} />
+```
+
+![Column Chart](public/screenshots/column-chart.png)
+
+### Radar Chart
+
+The Radar Chart is implemented in the `app-current-subject.jsx` file. You can view the file [here](./src/sections/overview/app-current-subject.jsx).
+
+```jsx
+<Chart type="radar" series={series} options={chartOptions} />
+```
+
+![Radar Chart](public/screenshots/radar-chart.png)
 
 ## Challenges and Solutions
 
