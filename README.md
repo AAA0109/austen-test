@@ -15,7 +15,7 @@ The task was to create a dashboard using React and Chart.js (or any other librar
 
 ## Live Demo
 
-You can view a live demo of the project at [live_demo_url].
+You can view a live demo of the project at https://austen-test.vercel.app/.
 
 ## Project Structure
 

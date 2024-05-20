@@ -88,10 +88,12 @@ export default function UserPage() {
 
   const handleDeleteSelected = () => {
     setUsers((prevUsers) => prevUsers.filter((user) => !selected.includes(user.name)));
+    setSelected([]);
   };
 
   const handleDelete = (name) => {
     setUsers((prevUsers) => prevUsers.filter((user) => user.name !== name));
+    setSelected((prevSelected) => prevSelected.filter((item) => item !== name));
   };
 
   const dataFiltered = applyFilter({
