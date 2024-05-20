@@ -80,16 +80,16 @@ You can view a live demo of the project at https://austen-test.vercel.app/.
 
 ## Chart Types
 
-We have implemented various chart types using ApexCharts.js.
+I have implemented various chart types using ApexCharts.js.
 
 ### Using the `useChart` Hook
 
 ```jsx
 import Chart, { useChart } from 'src/components/chart';
 
-// ..
+// ...
 const Component = () => {
-  // ..
+  // ...
   const chartOptions = useChart({
     plotOptions: {
       bar: {
@@ -104,7 +104,7 @@ const Component = () => {
     },
     ...options,
   });
-  // ..
+  // ...
 };
 ```
 
@@ -118,15 +118,15 @@ const chartOptions = useChart({
   series: [
     {
       type: 'column',
-      // ..
+      // ...
     },
     {
       type: 'area',
-      // ..
+      // ...
     },
     {
       type: 'line',
-      // ..
+      // ...
     },
   ],
 })
